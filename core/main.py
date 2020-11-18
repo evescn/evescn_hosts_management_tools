@@ -45,6 +45,8 @@ def show_common():
     put source_file destination_file
     get source_file destination_file
     ... 
+    
+    quit: 返回上一层，重新选择分组
     """
     print('\033[1;32m %s\033[0m' % common_msg)
 
@@ -160,12 +162,17 @@ def start():
         try:
             host_list = []
             for host, ip in all_group_list[group_list[choice]].items():
+                print('%s. %s' % (host, ip))
                 host_list.append(ip)
 
             while True:
                 show_common()
                 choice = input(">> ").strip()
-                exec_common(host_list, choice)
+
+                if choice == 'quit':
+                    break
+                else:
+                    exec_common(host_list, choice)
 
         except BaseException as e:
             print(e)

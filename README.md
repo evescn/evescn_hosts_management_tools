@@ -39,6 +39,10 @@
 
 ```
 
+## 程序流程图
+
+![](主机批量管理工具.png)
+
 ##  程序启动
 
 > 使用的依赖为：os, sys, json, threading, paramiko, logging
@@ -61,13 +65,40 @@ list index out of range
 0: web
 1: backend
 2: NFS
->> 2
+>> 0
+1. 192.168.3.132
+2. 192.168.3.161
+3. 192.168.3.191
+
  
     exce common
     put source_file destination_file
     get source_file destination_file
     ... 
     
+    quit: 返回上一层，重新选择分组
+    
+>> quit
+ Host Managemet Tools
+0: web
+1: backend
+2: NFS
+>> 
+
+ Host Managemet Tools
+0: web
+1: backend
+2: NFS
+>> 2
+1. 192.168.3.52
+
+    exce common
+    put source_file destination_file
+    get source_file destination_file
+    ... 
+    
+    quit: 返回上一层，重新选择分组
+
 >> ls
 
  ------ 192.168.3.52 ------ 
@@ -93,6 +124,8 @@ test_images
     get source_file destination_file
     ... 
     
+    quit: 返回上一层，重新选择分组
+
 >> get 1.py test.py
 
  ------ 192.168.3.52 ------ 
@@ -115,6 +148,8 @@ D:\evescn\python14\day9\eve_hosts_management_tools/db/1.py 上传成功，保存
     get source_file destination_file
     ... 
     
+    quit: 返回上一层，重新选择分组
+
 >> ls
 
  ------ 192.168.3.52 ------ 
@@ -140,4 +175,7 @@ test.py
     put source_file destination_file
     get source_file destination_file
     ... 
+    
+    quit: 返回上一层，重新选择分组
+
 ```
